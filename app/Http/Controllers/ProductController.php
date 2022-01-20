@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\ProductStock;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -22,10 +22,10 @@ class ProductController extends Controller
     {
         $product_stocks = ProductStock::get();
         $categories = Category::get();
-        return view('products.create', [
+        return view('products.create',[
+        '$product_stocks' => $product_stocks,
             'categories' => $categories,
-            '$product_stocks' => $product_stocks
-        ]);
+            ]);
     }
     public function store(Request $request)
     {
@@ -37,18 +37,15 @@ class ProductController extends Controller
         $product -> selling_price = $request->selling_price;
         $product->location = $request->location;
         $product -> year = $request->year;
-//        $product->save();
-//        $product->stock_id = $product->id;
 
         if($request->hasFile('photo')){
             $photo = $request->photo;
-            $name = Str::random(60) . '' . $photo->getClientOriginalExtension();
+            $name = date('YmdHis') . "." . $photo->getClientOriginalExtension();
             $photo->storeAs('public/product_image',$name);
             $product->photo = $photo;
 
         }
         $product->save();
-
         $product_stocks = new ProductStock();
         $product_stocks->product_id = $product->id;
         $product_stocks->quantity = $request->quantity;
@@ -56,13 +53,10 @@ class ProductController extends Controller
 
         $product->stock_id = $product_stocks->id;
         $product->save();
+        Toastr::success('Successfully', 'Create', ["positionClass" => "toast-top-right"]);
         return redirect(route('products.index'));
     }
-//    public function store_stock_id(Request $request){
-//        $product = new Product();
-//        $product -> stock_id = ProductStock::id();
-//        $product->save();
-//    }
+
 
     public function show(Product $product)
     {
@@ -85,12 +79,14 @@ class ProductController extends Controller
     public function update(Request $request ,Product $product)
     {
         $product->update($request->all());
+        Toastr::success('Successfully', 'Update', ["positionClass" => "toast-top-right"]);
         return redirect(route('products.index'));
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
+        Toastr::error('Successfully', 'Delete', ["positionClass" => "toast-top-right"]);
         return redirect(route('products.index'));
     }
 }

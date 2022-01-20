@@ -1,7 +1,15 @@
 @extends('home')
 
 @section('content')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-
+     alpha/css/bootstrap.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 <div id="container" class="effect mainnav-full">
     <div class="boxed">
@@ -28,16 +36,14 @@
             @csrf
             <div id="page-content">
                 <div class="row">
+
                     <div class="col-lg-6">
                         <div class="panel">
                             <!-- Panel heading -->
-                            @if ($message = Session::get('success'))
-                                <div class="alert alert-success">
-                                    <p>{{ $message }}</p>
-                                </div>
-                            @endif
                             <div class="panel-heading">
-                                <h3 class="panel-title">Tooltip Validation</h3>
+                                <h3 class="panel-title">
+                                        In and Out
+                                </h3>
                             </div>
                             <div id="demo-tooltip-validation" class="form-horizontal">
 
@@ -96,12 +102,26 @@
 
                                     <!--===================================================-->
                                 </div>
-                                <div class="panel-footer">
-                                    <div class="row">
-                                        <div class="col-sm-7 col-sm-offset-3">
-                                            <button class="btn btn-primary" type="submit">Submit</button>
+{{--                                <div class="panel-footer">--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-sm-7 col-sm-offset-3">--}}
+{{--                                            <button class="btn btn-primary" type="submit">Submit</button>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+                                <div id="demo-panel-w-alert" class="panel">
+                                    <!--Panel heading-->
+                                    <div class="panel-heading">
+                                        <div class="panel-control">
+                                            <div class="btn-group">
+                                                <button id="demo-panel-alert" class="btn btn-sm btn-primary">Submit</button>
+                                            </div>
                                         </div>
                                     </div>
+                                    <!--Panel body-->
+{{--                                    <div class="panel-body">--}}
+{{--                                        <p>Lorem ipsum dolor sit amet.</p>--}}
+{{--                                    </div>--}}
                                 </div>
                         </div>
                     </div>
@@ -124,5 +144,41 @@
 <!--===================================================-->
 <!-- END OF CONTAINER -->
 <!--Form validation [ SAMPLE ]-->
+    <script>
+        @if(Session::has('message'))
+            toastr.options =
+            {
+                "closeButton" : true,
+                "progressBar" : true
+            }
+        toastr.success("{{ session('message') }}");
+        @endif
 
+            @if(Session::has('error'))
+            toastr.options =
+            {
+                "closeButton" : true,
+                "progressBar" : true
+            }
+        toastr.error("{{ session('error') }}");
+        @endif
+
+            @if(Session::has('info'))
+            toastr.options =
+            {
+                "closeButton" : true,
+                "progressBar" : true
+            }
+        toastr.info("{{ session('info') }}");
+        @endif
+
+            @if(Session::has('warning'))
+            toastr.options =
+            {
+                "closeButton" : true,
+                "progressBar" : true
+            }
+        toastr.warning("{{ session('warning') }}");
+        @endif
+    </script>
 @endsection

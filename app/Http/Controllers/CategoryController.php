@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -39,6 +40,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         Category::create($request->all());
+        Toastr::success('Successfully', 'Add category', ["positionClass" => "toast-top-right"]);
         return redirect()->route('category.index');
     }
 
@@ -76,6 +78,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $category->update($request->all());
+        Toastr::success('Successfully', 'Update category', ["positionClass" => "toast-top-right"]);
         return redirect(route('category.index'));
     }
 
@@ -88,6 +91,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
+        Toastr::error('Successfully', 'Delete category', ["positionClass" => "toast-top-right"]);
         return redirect(route('category.index'));
     }
 }

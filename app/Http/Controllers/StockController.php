@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\ProductStock;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class StockController extends Controller
 {
@@ -54,12 +55,17 @@ class StockController extends Controller
                 if ($request->status_type == ProductStock::STOCK_IN) {
                     //stock in
                     $stock_update->quantity = $stock_update->quantity + $request['quantity'];
+                    Toastr::success('Successfully', 'In Stock', ["positionClass" => "toast-top-right"]);
+                    return redirect()->route('stock.create');
                 } else {
                     //stock out
                     $stock_update->quantity = $stock_update->quantity - $request['quantity'];
+                    Toastr::success('Successfully','Out Stock', ["positionClass" => "toast-top-right"]);
+                    return redirect()->route('stock.create');
+
                 }
                 $stock_update->save();
-                return redirect(route('stock.create'));
+
             }
     }
 

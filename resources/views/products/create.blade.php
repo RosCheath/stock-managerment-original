@@ -42,14 +42,14 @@
                                     <!--===================================================-->
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Name</label>
-                                        <div class="col-lg-5">
+                                        <div class="col-lg-7">
                                             <input type="text" class="form-control" name="name" placeholder="Name" required value="{{old('name')}}">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label"> Category </label>
-                                        <div class="col-lg-5">
+                                        <div class="col-lg-7">
                                             <!-- Bootstrap Select with Search Input -->
                                             <!--===================================================-->
                                             <select class="form-control selectpicker" data-live-search="true" id="category_id" name="category_id">
@@ -62,20 +62,20 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Unit Price</label>
-                                        <div class="col-lg-5">
+                                        <div class="col-lg-7">
                                             <input type="text" class="form-control" name="unit_price" placeholder="Unit Price" required value="{{old('quanity')}}">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Selling Price</label>
-                                        <div class="col-lg-5">
+                                        <div class="col-lg-7">
                                             <input type="text" class="form-control" name="selling_price" placeholder="Selling Price" required value="{{old('selling_price')}}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Year</label>
-                                        <div class="col-lg-5">
+                                        <div class="col-lg-7">
                                             <input type="text" class="form-control" name="year" placeholder="year" required value="{{old('year')}}">
                                         </div>
                                     </div>
@@ -83,14 +83,14 @@
 
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">quantity</label>
-                                        <div class="col-lg-5">
+                                        <div class="col-lg-7">
                                             <input type="text" class="form-control" name="quantity" placeholder="quantity" required value="{{old('quantity')}}">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">location</label>
-                                        <div class="col-lg-5">
+                                        <div class="col-lg-7">
                                             <input type="text" class="form-control" name="location" placeholder="location" required value="{{old('location')}}">
                                         </div>
                                     </div>
@@ -165,7 +165,7 @@
                                             <img id="file-ip-1-preview">
                                         </div>
                                         <label for="file-ip-1">Upload Image</label>
-                                        <input  name="photo" type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+                                        <input type="file" name="photo" class="form-control" id="file-ip-1" placeholder="photo" value="{{old('photo')}}" onchange="showPreview(event);">
 
                                     </div>
                                 </div>

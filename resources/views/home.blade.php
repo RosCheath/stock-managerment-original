@@ -12,7 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 
-
+    <link rel="stylesheet" href="//cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     <!--=================================================-->
     <!--Roboto Slab Font [ OPTIONAL ] -->
     <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700" rel="stylesheet">

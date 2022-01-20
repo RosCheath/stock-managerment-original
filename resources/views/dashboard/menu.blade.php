@@ -83,5 +83,6 @@
         </li>
         <!-- end standard drop down -->
     </ul>
+{!! Toastr::message() !!}
     <!-- end nav navbar-nav -->
 </div>

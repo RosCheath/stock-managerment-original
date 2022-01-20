@@ -32,6 +32,7 @@
                         <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Image</th>
                             <th>Category</th>
                             <th>Quantity</th>
                             <th>Year</th>
@@ -44,6 +45,7 @@
                         @foreach($products as $product)
                         <tr>
                             <td>{{ $product->name }}</td>
+                            <td><img src="/{{ $product->photo }}" width="30px"></td>
                             <td>{{ $product->category->name }}</td>
                             <td>{{ $product->stock->quantity }}</td>
                             <td>{{ $product->year }}</td>
