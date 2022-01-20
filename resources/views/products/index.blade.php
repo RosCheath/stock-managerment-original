@@ -46,7 +46,7 @@
                         <tr>
                             <td>{{ $product->name }}</td>
                             <td>
-                                <img width="30px" height="30px" src={{asset('storage/product_image/'. $product->image)}}>
+                                <img width="30px" height="30px" src={{$product->image}}>
                             </td>
                             <td>{{ $product->category->name }}</td>
                             <td>{{ $product->stock->quantity }}</td>

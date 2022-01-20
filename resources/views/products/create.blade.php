@@ -23,7 +23,7 @@
             <!--End page title-->
             <!--Page content-->
             <!--===================================================-->
-            <form method="post" action="{{ route('products.store')}}">
+            <form method="post" action="{{ route('products.store')}}" enctype="multipart/form-data">
             @csrf
             <div id="page-content">
                 <div class="row">
@@ -61,7 +61,7 @@
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Unit Price</label>
                                         <div class="col-lg-7">
-                                            <input type="text" class="form-control" name="unit_price" placeholder="Unit Price" required value="{{old('quanity')}}">
+                                            <input type="text" class="form-control" name="unit_price" placeholder="Unit Price" required value="{{old('unit_price')}}">
                                         </div>
                                     </div>
 
