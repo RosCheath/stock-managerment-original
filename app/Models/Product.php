@@ -10,7 +10,7 @@ class Product extends Model
     use HasFactory;
 
     public $fillable = [
-        'category_id' ,'stock_id','user_id', 'name', 'unit_price','selling_price','photo','year'
+        'category_id' ,'stock_id','user_id', 'name', 'unit_price','selling_price','image','year'
     ];
 
     public function category()

@@ -29,7 +29,6 @@ class HomeController extends Controller
     public function home_dashboard()
     {
         $productCount = DB::table('products')->count();
-        Toastr::success('Successfully', 'Login', ["positionClass" => "toast-top-right"]);
         return view('dashboard.dashboard_home',compact('productCount'));
     }
 }

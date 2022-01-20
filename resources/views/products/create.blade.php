@@ -2,8 +2,6 @@
 
 @section('content')
 
-    <!--Dropzone [ OPTIONAL ]-->
-    <link href="{{asset('asset_dashboard/plugins/dropzone/dropzone.css')}}" rel="stylesheet">
 <div id="container" class="effect mainnav-full">
     <div class="boxed">
         <!--CONTENT CONTAINER-->
@@ -53,7 +51,7 @@
                                             <!-- Bootstrap Select with Search Input -->
                                             <!--===================================================-->
                                             <select class="form-control selectpicker" data-live-search="true" id="category_id" name="category_id">
-                                                @foreach($categories as $category)--}}
+                                                @foreach($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                                 @endforeach
                                             </select>
@@ -165,8 +163,7 @@
                                             <img id="file-ip-1-preview">
                                         </div>
                                         <label for="file-ip-1">Upload Image</label>
-                                        <input type="file" name="photo" class="form-control" id="file-ip-1" placeholder="photo" value="{{old('photo')}}" onchange="showPreview(event);">
-
+                                        <input type="file" name="image" class="form-control" id="file-ip-1" value="{{old('image')}}" onchange="showPreview(event);">
                                     </div>
                                 </div>
                                 <script type="text/javascript">
@@ -205,9 +202,5 @@
 <!-- END OF CONTAINER -->
 <!--Form validation [ SAMPLE ]-->
 
-    <!--Dropzone [ OPTIONAL ]-->
-    <script src="{{asset('asset_dashboard/plugins/dropzone/dropzone.min.js')}}"></script>
-    <!--Dropzone [ OPTIONAL ]-->
-    <script src="{{asset('asset_dashboard/plugins/ion-rangeslider/ion.rangeSlider.min.js')}}"></script>
 
 @endsection

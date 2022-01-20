@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use Psy\Util\Str;
 
 class ProductController extends Controller
 {
@@ -29,6 +30,15 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'unit_price' => 'required',
+            'selling_price' => 'required',
+            'location' => 'required',
+            'year' => 'required',
+            'quantity' => 'required',
+        ]);
+
         $product = new Product();
         $product -> user_id = Auth::id();
         $product -> name = $request->name;
@@ -38,12 +48,11 @@ class ProductController extends Controller
         $product->location = $request->location;
         $product -> year = $request->year;
 
-        if($request->hasFile('photo')){
-            $photo = $request->photo;
-            $name = date('YmdHis') . "." . $photo->getClientOriginalExtension();
-            $photo->storeAs('public/product_image',$name);
-            $product->photo = $photo;
-
+        if ($request->hasfile('image')) {
+            $image = $request->image;
+            $name = Str::random(60) . "." . $image->getClientOriginalExtension();
+            $image->storeAs('public/product_image',$name);
+            $product->image = $name;
         }
         $product->save();
         $product_stocks = new ProductStock();

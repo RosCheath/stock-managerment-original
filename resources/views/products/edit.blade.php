@@ -151,7 +151,7 @@
                                         </div>
                                         <label for="file-ip-1">Upload Image</label>
 {{--                                        <input  name="photo" type="file" value="{{$product->photo}}" id="file-ip-1" accept="image/*" onchange="showPreview(event);">--}}
-                                        <input type="file" name="photo" class="form-control" id="file-ip-1" placeholder="photo" value="{{old('photo')}}" onchange="showPreview(event);">
+                                        <input type="file" name="image" class="form-control" id="file-ip-1" placeholder="image" value="{{old('image')}}" onchange="showPreview(event);">
                                     </div>
                                 </div>
                                 <script type="text/javascript">
