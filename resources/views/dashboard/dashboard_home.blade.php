@@ -29,7 +29,7 @@
                             <div class="row">
                                 <div class="col-md-9 col-sm-9 col-xs-10">
                                     <h3 class="mar-no"> <span class="counter">{{$productCount}} Products</span></h3>
-                                    <p class="mar-ver-5"> Traffic this month </p>
+                                    <p class="mar-ver-5"> New and Old Product </p>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-2"> <i class="fa fa-shopping-cart fa-3x text-info"></i> </div>
                             </div>
@@ -46,7 +46,7 @@
                             <div class="row">
                                 <div class="col-md-9 col-sm-9 col-xs-10">
                                     <h3 class="mar-no"> <span class="counter">{{$categoryCount}} Category</span></h3>
-                                    <p class="mar-ver-5">Server Load</p>
+                                    <p class="mar-ver-5">New and old Category</p>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-2"> <i class="fa fa-list-alt fa-3x text-danger"></i> </div>
                             </div>
@@ -63,7 +63,7 @@
                             <div class="row">
                                 <div class="col-md-9 col-sm-9 col-xs-10">
                                     <h3 class="mar-no"> <span class="counter">{{$employeeCount}} Employees</span></h3>
-                                    <p class="mar-ver-5"> Total Sales </p>
+                                    <p class="mar-ver-5"> New and old Employee </p>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-2"> <i class="fa fa-users fa-3x text-success"></i> </div>
                             </div>
@@ -79,8 +79,8 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-9 col-sm-9 col-xs-10">
-                                    <h3 class="mar-no"> <span class="counter">{{$allstockCount}} In and Out Stock </span></h3>
-                                    <p class="mar-ver-5"> Search Traffic</p>
+                                    <h3 class="mar-no"> <span class="counter">{{$allstockCount}} History </span></h3>
+                                    <p class="mar-ver-5"> In and Out Stock</p>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-2"><i class="fa fa-cubes fa-3x text-info"></i> </div>
                             </div>
@@ -144,7 +144,7 @@
                                     ],
                                     colors: ['#E9422E', '#FAC552', '#3eb489', '#29b7d3', '#8a42f5'],
                                     resize:true,
-                                    formatter: function (x) { return x + "%"}
+                                    formatter: function (x) { return x}
                                 }).on('click', function(i, row){
                                     console.log(i, row);
                                 });
@@ -171,9 +171,9 @@
                             <div class="tab-base">
                                 <!--Nav Tabs-->
                                 <ul class="nav nav-tabs">
-                                    <li class="active"> <a data-toggle="tab" href="#demo-lft-tab-1"> Top Selling </a> </li>
-                                    <li> <a data-toggle="tab" href="#demo-lft-tab-2">Most Viewed</a> </li>
-                                    <li> <a data-toggle="tab" href="#demo-lft-tab-3">Recent Orders</a> </li>
+                                    <li class="active"> <a data-toggle="tab" href="#demo-lft-tab-1"> New Product </a> </li>
+                                    <li> <a data-toggle="tab" href="#demo-lft-tab-2">New Employee</a> </li>
+                                    <li> <a data-toggle="tab" href="#demo-lft-tab-3">New User</a> </li>
                                 </ul>
                                 <!--Tabs Content-->
                                 <div class="tab-content">

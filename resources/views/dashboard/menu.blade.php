@@ -29,14 +29,14 @@
         </li>
         <!-- end standard drop down -->
         <!-- standard drop down -->
-        <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Charts <b class="caret"></b></a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="charts-flot.html"> Flot Chart </a></li>
-                <li><a href="charts-morris.html"> Morris Chart </a></li>
-            </ul>
-            <!-- end dropdown-menu -->
-        </li>
+{{--        <li class="dropdown">--}}
+{{--            <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Charts <b class="caret"></b></a>--}}
+{{--            <ul class="dropdown-menu" role="menu">--}}
+{{--                <li><a href="charts-flot.html"> Flot Chart </a></li>--}}
+{{--                <li><a href="charts-morris.html"> Morris Chart </a></li>--}}
+{{--            </ul>--}}
+{{--            <!-- end dropdown-menu -->--}}
+{{--        </li>--}}
         <!-- end standard drop down -->
         <!-- standard drop down -->
         <li class="{{ (request()->is('calender')) ? 'active' : '' }}">
@@ -44,9 +44,9 @@
         </li>
         <!-- end standard drop down -->
         <!-- standard drop down -->
-        <li>
-            <a href="ui-widgets.html"> Widgets </a>
-        </li>
+{{--        <li>--}}
+{{--            <a href="ui-widgets.html"> Widgets </a>--}}
+{{--        </li>--}}
         <!-- end standard drop down -->
         <!-- standard drop down -->
         <li class="{{ (request()->is('show/history')) ? 'active' : '' }}">

@@ -57,7 +57,7 @@
                                             <!--===================================================-->
                                             <select class="form-control selectpicker" data-live-search="true" id="product_id" name="product_id">
                                                 @foreach($product as $product)
-                                                <option value="{{ $product->id }}">{{ $product->name }}</option>
+                                                <option value="{{ $product->id }}">{{ $product->name }} ({{$product->stock->quantity}}) </option>
                                                 @endforeach
                                             </select>
                                             <!--===================================================-->
@@ -98,7 +98,6 @@
                                         <div class="col-lg-5">
                                             <input type="text" class="form-control" name="quantity" placeholder="quantity" required value="{{old('quantity')}}">
                                         </div>
-                                        <label class="col-lg control-label">{{$product->stock->quantity}} IN Stock</label>
                                     </div>
 
                                     <!--===================================================-->

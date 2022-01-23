@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> SmartAdmin - Responsive admin template..</title>
-    <link rel="shortcut icon" href="{{asset('asset_dashboard/img/favicon.ico')}}">
+    <title> {{ config('app.name') }}</title>
+    <link href="{{ asset('logo.png')}}" rel="icon">
     <!--STYLESHEET-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
@@ -160,11 +160,11 @@
         </div>
         <!-- Visible when footer positions are static -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <div class="hide-fixed pull-right pad-rgt">Currently v2.2</div>
+        <div class="hide-fixed pull-right pad-rgt">Ros Cheat Version 1.0</div>
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <p class="pad-lft">&#0169; 2015 Your Company</p>
+        <p class="pad-lft">&#0169; 2022 Stock M</p>
     </footer>
     <!--===================================================-->
     <!-- END FOOTER -->

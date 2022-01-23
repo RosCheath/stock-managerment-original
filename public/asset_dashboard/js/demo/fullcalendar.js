@@ -56,7 +56,7 @@ $(document).ready(function() {
 				$(this).remove();
 			}
 		},
-		defaultDate: '2016-06-12',
+		defaultDate: new Date(),
         selectable: true,
         selectHelper: true,
         select: function(start, end) {
@@ -74,88 +74,7 @@ $(document).ready(function() {
 	    },
 		eventLimit: true, // allow "more" link when too many events
 		events: [
-			{
-				title: 'Happy Hour',
-				start: '2016-06-05',
-				end: '2016-06-07',
-				className: 'purple'
-			},
-			{
-				title: 'Birthday Party',
-				start: '2016-06-15',
-				end: '2016-06-17',
-				className: 'mint'
-			},
-			{
-				title: 'All Day Event',
-				start: '2016-06-15',
-				className: 'warning'
-			},
-			{
-				title: 'Meeting',
-				start: '2016-06-20T10:30:00',
-				end: '2016-06-20T12:30:00',
-				className: 'danger'
-			},
-			{
-				title: 'All Day Event',
-				start: '2016-07-01',
-				className: 'warning'
-			},
-			{
-				title: 'Long Event',
-				start: '2016-07-07',
-				end: '2016-07-10',
-				className: 'purple'
-			},
-			{
-				id: 999,
-				title: 'Repeating Event',
-				start: '2016-07-09T16:00:00'
-			},
-			{
-				id: 999,
-				title: 'Repeating Event',
-				start: '2016-07-16T16:00:00',
-				className: 'success'
-			},
-			{
-				title: 'Conference',
-				start: '2016-07-11',
-				end: '2016-07-13',
-				className: 'dark'
-			},
-			{
-				title: 'Meeting',
-				start: '2016-07-12T10:30:00',
-				end: '2016-07-12T12:30:00'
-			},
-			{
-				title: 'Lunch',
-				start: '2016-07-12T12:00:00',
-				className: 'pink'
-			},
-			{
-				title: 'Meeting',
-				start: '2016-07-12T14:30:00'
-			},
-			{
-				title: 'Happy Hour',
-				start: '2016-07-12T17:30:00'
-			},
-			{
-				title: 'Dinner',
-				start: '2016-07-12T20:00:00'
-			},
-			{
-				title: 'Birthday Party',
-				start: '2016-07-13T07:00:00'
-			},
-			{
-				title: 'Click for Google',
-				url: 'http://google.com/',
-				start: '2016-07-28'
-			}
+
 		]
 	});
 

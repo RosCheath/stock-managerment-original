@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Register page | SmartAdmin - Responsive admin template.</title>
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <title> {{ config('app.name') }}</title>
+    <link href="{{ asset('logo.png')}}" rel="icon">
     <!--STYLESHEET-->
     <!--=================================================-->
     <!--Roboto Slab Font [ OPTIONAL ] -->
@@ -48,24 +48,44 @@
                         <div class="text-left">
                             <label for="signupInputName" class="control-label">Full Name</label>
                             <input id="signupInputName" type="text" placeholder="Enter Full Name" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus />
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                         <div class="text-left">
                             <label for="signupInputEmail" class="control-label">Email Address</label>
                             <input id="signupInputEmail" type="email" placeholder="Enter Email Address" class="form-control" name="email" name="email" value="{{ old('email') }}" required autocomplete="email" />
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                         <div class="text-left">
                             <label for="signupInputPassword" class="control-label">Password</label>
                             <input id="signupInputPassword" type="password" placeholder="Password" class="form-control lock-input" name="password" required autocomplete="new-password" />
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                         <div class="text-left">
                             <label for="signupInputRepassword" class="control-label">Retype Password</label>
                             <input id="signupInputRepassword" type="password" placeholder="Retype Password" class="form-control lock-input" name="password_confirmation" required autocomplete="new-password" />
+                            @error('password_confirmation')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                     </div>
 {{--                    <div class="form-group col-md-12 col-sm-12 col-xs-12">--}}

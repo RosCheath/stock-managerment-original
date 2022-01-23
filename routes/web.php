@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 Auth::routes();
-Route::group(['web'],function()
+Route::group(['web','middleware' => 'auth'],function()
 {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/home/dashboard', [App\Http\Controllers\HomeController::class, 'home_dashboard'])->name('home_dashboard');

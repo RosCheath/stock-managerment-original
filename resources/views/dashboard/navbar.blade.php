@@ -4,9 +4,10 @@
     <div id="navbar-container" class="boxed">
         <!--Brand logo & name-->
         <!--================================-->
+
         <div class="navbar-header">
-            <a href="index.html" class="navbar-brand">
-                <i class="fa fa-cube brand-icon"></i>
+            <a href="{{route('home_dashboard')}}" class="navbar-brand">
+                <img id="logo" class="brand-icon" src="{{ asset('logo.png')}}">
                 <div class="brand-title">
                     <span class="brand-text">Stock-M</span>
                 </div>

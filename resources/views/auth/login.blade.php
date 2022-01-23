@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Login Page | SmartAdmin - Responsive admin template.</title>
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <title> {{ config('app.name') }}</title>
+    <link href="{{ asset('logo.png')}}" rel="icon">
     <!--STYLESHEET-->
     <!--=================================================-->
     <!--Roboto Slab Font [ OPTIONAL ] -->
@@ -45,10 +45,20 @@
                         <div class="text-left">
                             <label class="text-muted">Email ID</label>
                             <input id="signupInputEmail1" type="email" placeholder="Enter Email ID" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                         <div class="text-left">
                             <label for="signupInputPassword" class="text-muted">Password</label>
                             <input id="signupInputPassword" type="password" placeholder="Password" class="form-control lock-input" name="password" required autocomplete="current-password" />
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
 
                             <div class="pull pad-btm">
