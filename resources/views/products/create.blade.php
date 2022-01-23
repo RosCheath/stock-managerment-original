@@ -10,12 +10,12 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div class="pageheader">
-                <h3><i class="fa fa-home"></i> Forms Validation </h3>
+                <h3><i class="fa fa-home"></i> Create Product </h3>
                 <div class="breadcrumb-wrapper">
                     <span class="label">You are here:</span>
                     <ol class="breadcrumb">
                         <li> <a href="#"> Home </a> </li>
-                        <li class="active"> Forms Validation </li>
+                        <li class="active"> Create Product </li>
                     </ol>
                 </div>
             </div>

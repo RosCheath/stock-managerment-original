@@ -5,12 +5,12 @@
     <!--===================================================-->
     <div id="content-container">
         <div class="pageheader">
-            <h3><i class="fa fa-home"></i> Datatable Table </h3>
+            <h3><i class="fa fa-home"></i> Products Table </h3>
             <div class="breadcrumb-wrapper">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li> <a href="#"> Home </a> </li>
-                    <li class="active"> datatable Table </li>
+                    <li class="active"> Products Table </li>
                 </ol>
             </div>
         </div>
@@ -46,7 +46,7 @@
                         <tr>
                             <td>{{ $product->name }}</td>
                             <td>
-                                <img width="30px" height="30px" src={{$product->image}}>
+                                <img width="30px" height="30px" src="{{ '/image/'.$product->image }}">
                             </td>
                             <td>{{ $product->category->name }}</td>
                             <td>{{ $product->stock->quantity }}</td>

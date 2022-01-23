@@ -10,12 +10,12 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div class="pageheader">
-                <h3><i class="fa fa-home"></i> Forms Validation </h3>
+                <h3><i class="fa fa-home"></i> Edit Product </h3>
                 <div class="breadcrumb-wrapper">
                     <span class="label">You are here:</span>
                     <ol class="breadcrumb">
                         <li> <a href="#"> Home </a> </li>
-                        <li class="active"> Forms Validation </li>
+                        <li class="active"> Edit Product </li>
                     </ol>
                 </div>
             </div>
@@ -27,13 +27,13 @@
                 <form id="demo-tooltip-validation" action="{{ route('products.update', $product->id) }}" method="POST" class="form-horizontal">
                     @csrf
                     @method('PUT')
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel">
-                            <!-- Panel heading -->
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Tooltip Validation</h3>
-                            </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="panel">
+                                <!-- Panel heading -->
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Form</h3>
+                                </div>
                                 <div class="panel-body">
                                     <!--SHOWING ERRORS IN TOOLTIP-->
                                     <!--===================================================-->
@@ -89,90 +89,43 @@
                                 </div>
 
 
-                        </div>
-
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Image</h3>
                             </div>
-                            <div class="panel-body">
-                                <style>
-                                    .center {
-                                        height:100%;
-                                        display:flex;
-                                        align-items:center;
-                                        justify-content:center;
 
-                                    }
-                                    .form-input {
-                                        width:350px;
-                                        padding:20px;
-                                        background:#fff;
-                                        box-shadow: -3px -3px 7px rgba(94, 104, 121, 0.377),
-                                        3px 3px 7px rgba(94, 104, 121, 0.377);
-                                    }
-                                    .form-input input {
-                                        display:none;
-
-                                    }
-                                    .form-input label {
-                                        display:block;
-                                        width:45%;
-                                        height:45px;
-                                        margin-left: 25%;
-                                        line-height:50px;
-                                        text-align:center;
-                                        background:#1172c2;
-
-                                        color:#fff;
-                                        font-size:15px;
-                                        font-family:"Open Sans",sans-serif;
-                                        text-transform:Uppercase;
-                                        font-weight:600;
-                                        border-radius:5px;
-                                        cursor:pointer;
-                                    }
-
-                                    .form-input img {
-                                        width:100%;
-                                        display:none;
-
-                                        margin-bottom:30px;
-                                    }
-                                </style>
-                                </head>
-                                <body>
-                                <div class="center">
-                                    <div class="form-input">
-                                        <div class="preview">
-                                            <img id="file-ip-1-preview">
-                                        </div>
-                                        <label for="file-ip-1">Upload Image</label>
-{{--                                        <input  name="photo" type="file" value="{{$product->photo}}" id="file-ip-1" accept="image/*" onchange="showPreview(event);">--}}
-                                        <input type="file" name="image" class="form-control" id="file-ip-1" placeholder="image" value="{{old('image')}}" onchange="showPreview(event);">
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Image</h3>
                                 </div>
-                                <script type="text/javascript">
-                                    function showPreview(event){
-                                        if(event.target.files.length > 0){
-                                            var src = URL.createObjectURL(event.target.files[0]);
-                                            var preview = document.getElementById("file-ip-1-preview");
-                                            preview.src = src;
-                                            preview.style.display = "block";
+                                <div class="panel-body">
+                                    <div class="center">
+                                        <div class="form-input">
+                                            <div class="preview">
+                                                <img id="file-ip-1-preview">
+                                            </div>
+                                            <img src="{{ '/image/'.$product->image }}" alt="Cover" width="50%" height="50%">
+                                            <input type="file" name="image" class="form-control" id="file-ip-1" value="{{$product->image}}" onchange="showPreview(event);">
+                                        </div>
+                                    </div>
+                                    <script type="text/javascript">
+                                        function showPreview(event){
+                                            if(event.target.files.length > 0){
+                                                var src = URL.createObjectURL(event.target.files[0]);
+                                                var preview = document.getElementById("file-ip-1-preview");
+                                                preview.src = src;
+                                                preview.style.display = "block";
+                                            }
                                         }
-                                    }
-                                </script>
-                                </body>
-                                </html>
+                                    </script>
+                                    </body>
+                                    </html>
 
 
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </form>
             </div>
             <!--===================================================-->

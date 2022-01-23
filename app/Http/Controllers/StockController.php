@@ -48,24 +48,22 @@ class StockController extends Controller
                 $new_item = new ProductStock();
                 $new_item->product_id = $request->product_id;
                 $new_item->status = $request->status_type;
-                $new_item->quantity = $request['quantity'];
+                $new_item->quantity = $request->quantity;
                 $new_item->save();
-
                 $stock_update = ProductStock::where('product_id', $request->product_id)->first();
                 if ($request->status_type == ProductStock::STOCK_IN) {
                     //stock in
                     $stock_update->quantity = $stock_update->quantity + $request['quantity'];
                     Toastr::success('Successfully', 'In Stock', ["positionClass" => "toast-top-right"]);
-                    return redirect()->route('stock.create');
                 } else {
                     //stock out
                     $stock_update->quantity = $stock_update->quantity - $request['quantity'];
                     Toastr::success('Successfully','Out Stock', ["positionClass" => "toast-top-right"]);
-                    return redirect()->route('stock.create');
+
 
                 }
                 $stock_update->save();
-
+                return redirect()->route('stock.create');
             }
     }
 

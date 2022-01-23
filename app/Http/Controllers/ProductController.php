@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -36,39 +35,28 @@ class ProductController extends Controller
             'selling_price' => 'required',
             'location' => 'required',
             'year' => 'required',
-            'quantity' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
-        if($request->hasFile('image'))
-        {
-            $image_name = $request->file('image')->getClientOriginalName();
-            $filename = pathinfo($image_name,PATHINFO_FILENAME);
-            $image_ext = $request->file('image')->getClientOriginalExtension();
-            $fileNameToStore = $filename.'-'.time().'.'.$image_ext;
-            $path =  $request->file('image')->storeAs('public/product_image',$fileNameToStore);
+        $input = $request->image;
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $productImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $productImage);
+            $input = $productImage;
         }
-        else{
-            $fileNameToStore = 'no-product.png';
-        }
-
         $product = new Product();
         $product->fill($request->all());
         $product -> user_id = Auth::id();
         $product -> name = $request->name;
-        $product -> image = $path;
+        $product -> image = $input;
         $product -> category_id = $request->category_id;
         $product -> unit_price = $request->unit_price;
         $product -> selling_price = $request->selling_price;
         $product->location = $request->location;
         $product -> year = $request->year;
-
-//        if ($request->hasfile('image')) {
-//            $image = $request->image;
-//            $name = Str::random(60) . "." . $image->getClientOriginalExtension();
-//            $image->storeAs('public/product_image',$name);
-//            $product->image = $name;
-//        }
         $product->save();
+
         $product_stocks = new ProductStock();
         $product_stocks->product_id = $product->id;
         $product_stocks->quantity = $request->quantity;
@@ -80,28 +68,33 @@ class ProductController extends Controller
         return redirect(route('products.index'));
     }
 
-
-    public function show(Product $product)
-    {
-        return view('product.show',
-        [
-            'product' => $product
-        ]);
-    }
     public function edit(Product $product)
     {
         $categories = Category::get();
         $product_stocks = ProductStock::get();
-        return view('products.edit',
+        return view('products.edit',compact('product'),
         [
-            'product' => $product,
             'categories' => $categories,
             'product_stocks' => $product_stocks
         ]);
     }
     public function update(Request $request ,Product $product)
     {
-        $product->update($request->all());
+        $request->validate([
+            'name' => 'required',
+            'unit_price' => 'required',
+            'selling_price' => 'required',
+            'location' => 'required',
+            'year' => 'required',
+        ]);
+        $input = $request->all();
+        if ($image = $request->file('image')) {
+            $imagePath = 'image/';
+            $productImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($imagePath, $productImage);
+            $input['image'] = "$productImage";
+        }
+        $product->update($input);
         Toastr::success('Successfully', 'Update', ["positionClass" => "toast-top-right"]);
         return redirect(route('products.index'));
     }

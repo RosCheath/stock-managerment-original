@@ -19,12 +19,12 @@
             <!--Page Title-->
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <div class="pageheader">
-                <h3><i class="fa fa-home"></i> Forms Validation </h3>
+                <h3><i class="fa fa-home"></i> Add Stock </h3>
                 <div class="breadcrumb-wrapper">
                     <span class="label">You are here:</span>
                     <ol class="breadcrumb">
                         <li> <a href="#"> Home </a> </li>
-                        <li class="active"> Forms Validation </li>
+                        <li class="active"> Add Stock </li>
                     </ol>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                         <div class="panel">
                             <!-- Panel heading -->
                             <div class="panel-heading">
-                                <h3 class="panel-title">Tooltip Validation</h3>
+                                <h3 class="panel-title">Add Quantity</h3>
                             </div>
                             <div id="demo-tooltip-validation" class="form-horizontal">
                                 <div class="panel-body">
@@ -98,17 +98,11 @@
                                         <div class="col-lg-5">
                                             <input type="text" class="form-control" name="quantity" placeholder="quantity" required value="{{old('quantity')}}">
                                         </div>
+                                        <label class="col-lg control-label">{{$product->stock->quantity}} IN Stock</label>
                                     </div>
 
                                     <!--===================================================-->
                                 </div>
-{{--                                <div class="panel-footer">--}}
-{{--                                    <div class="row">--}}
-{{--                                        <div class="col-sm-7 col-sm-offset-3">--}}
-{{--                                            <button class="btn btn-primary" type="submit">Submit</button>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
                                 <div id="demo-panel-w-alert" class="panel">
                                     <!--Panel heading-->
                                     <div class="panel-heading">

@@ -20,6 +20,7 @@ class CreateEmployeesTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('image')->nullable();
+            $table->string('dob');
             $table->timestamps();
         });
     }
