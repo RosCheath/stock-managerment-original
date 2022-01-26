@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('role')->default('admin');
+            $table->string('role')->default('Admin');
             $table->string('image')->default('https://ps.w.org/metronet-profile-picture/assets/icon-128x128.png?rev=2464419');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

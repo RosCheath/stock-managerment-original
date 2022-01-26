@@ -48,7 +48,7 @@ class StockController extends Controller
                 $new_item = new ProductStock();
                 $new_item->product_id = $request->product_id;
                 $new_item->status = $request->status_type;
-                $new_item->quantity = $request->quantity;
+                $new_item->quantity = $request['quantity'];
                 $new_item->save();
                 $stock_update = ProductStock::where('product_id', $request->product_id)->first();
                 if ($request->status_type == ProductStock::STOCK_IN) {
@@ -127,7 +127,7 @@ class StockController extends Controller
 
     public function stock_show()
     {
-        $stock = ProductStock::get();
+        $stock = ProductStock::latest()->paginate();
         return view('stock.show_history',compact('stock'));
     }
 }

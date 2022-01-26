@@ -11,7 +11,7 @@
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
                     <li> <a href="#"> Home </a> </li>
-                    <li class="active"> products History </li>
+                    <li class="active"> Stock History </li>
                 </ol>
             </div>
         </div>
@@ -26,7 +26,7 @@
                     <h3 class="panel-title">Products History</h3>
                 </div>
                 <div class="panel-body">
-                    <table id="demo-dt-basic" class="table table-striped table-bordered">
+                    <table class="table">
                         <thead>
                         <tr>
                             <th>Name</th>
