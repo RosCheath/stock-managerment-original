@@ -46,11 +46,11 @@
                         <tr>
                             <td>{{ $product->name }}</td>
                             <td>
-                                <img width="30px" height="30px" src="{{ '/image/'.$product->image }}">
+                                <img width="30px" height="30px" src="{{ url('storage/productImage/'. $product->image) }}">
                             </td>
                             <td>{{ $product->category->name }}</td>
                             <td>{{ $product->stock->quantity }}</td>
-                            <td>{{ $product->year }}</td>
+                            <td>{{ $product->image }}</td>
                             <td>{{ $product->updated_at->format('d-m-y') }}</td>
                             <td>{{ $product->updated_at->format('H:i:s') }}</td>
 
